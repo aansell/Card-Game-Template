@@ -19,6 +19,8 @@ public class Card : MonoBehaviour
     public TextMeshProUGUI costText;
     public TextMeshProUGUI damageText;
     public Image spriteImage;
+
+    public Image background;
         
 
     // Start is called before the first frame update
@@ -37,6 +39,11 @@ public class Card : MonoBehaviour
         costText.text = cost.ToString();
         damageText.text = damage.ToString();
         spriteImage.sprite = sprite;
+        
+        if(card_name == "Orc")
+        {
+            background.color = Color.chocolate;
+        }
     }
 
     // Update is called once per frame

@@ -70,6 +70,7 @@ MonoBehaviour:
   costText: {fileID: 1834597192991454445}
   damageText: {fileID: 5894728742779797524}
   spriteImage: {fileID: 8706265603331512291}
+  background: {fileID: 4581742794927167067}
 --- !u!61 &5503679804457771013
 BoxCollider2D:
   m_ObjectHideFlags: 0
