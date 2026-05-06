@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour
 {
     public Card_data data;
-
     public string card_name;
     public string description;
     public int health;
@@ -32,12 +31,12 @@ public class Card : MonoBehaviour
         damage = data.damage;
         sprite = data.sprite;
         nameText.text = card_name;
+        nameText.fontSize = data.fontSize;
         descriptionText.text = description;
         healthText.text = health.ToString();
         costText.text = cost.ToString();
         damageText.text = damage.ToString();
         spriteImage.sprite = sprite;
-
     }
 
     // Update is called once per frame
