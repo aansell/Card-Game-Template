@@ -36,14 +36,7 @@ public class GameManager : MonoBehaviour
         canvas = FindAnyObjectByType<Canvas>();
         ai_hand_location = player_hand_location + new Vector3 (0,350,0);
 
-        //create a new_card that is a clone of blank_card, place it at player_hand_location, default rotation, child to canvas
-        GameObject new_card = Instantiate(blank_card, player_hand_location, Quaternion.identity, canvas.transform);
-        new_card.GetComponent<Card>().data = player_deck[0];
-
-        //create a new_ai_card that is a clone of blank_card, place it at ai_hand_location, default rotation, child to canvas
-        GameObject new_ai_card = Instantiate(blank_card, ai_hand_location, Quaternion.identity, canvas.transform);
-        new_ai_card.GetComponent<Card>().data = ai_deck[0];
-        new_card.GetComponent<DraggableUI>().enabled = false;
+        Deal();
 
     }
 
@@ -55,12 +48,26 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
+        Shuffle(player_deck);
+        Shuffle(ai_deck);
+        
+        //create a new_card that is a clone of blank_card, place it at player_hand_location, default rotation, child to canvas
+        GameObject new_card = Instantiate(blank_card, player_hand_location, Quaternion.identity, canvas.transform);
+        new_card.GetComponent<Card>().data = player_deck[0];
 
+        //create a new_ai_card that is a clone of blank_card, place it at ai_hand_location, default rotation, child to canvas
+        GameObject new_ai_card = Instantiate(blank_card, ai_hand_location, Quaternion.identity, canvas.transform);
+        new_ai_card.GetComponent<Card>().data = ai_deck[0];
+        new_card.GetComponent<DraggableUI>().enabled = false;
     }
 
-    void Shuffle()
+    void Shuffle(List<Card_data> data_hand )
     {
-
+        
+    }
+    void Shuffle(List<Card> card_hand )
+    {
+        
     }
 
     void AI_Turn()
